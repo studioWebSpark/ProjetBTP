@@ -1,4 +1,4 @@
-name: CI/CD Laravel Vue.js on AWS Lightsail
+name: CI Laravel Vue.js on AWS Lightsail
 
 on:
   push:

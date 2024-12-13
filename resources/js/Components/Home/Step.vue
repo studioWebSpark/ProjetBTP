@@ -2,13 +2,13 @@
     <div class="flex justify-center mt-14">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full mx-auto px-8">
             <!-- Carte avec effet de fondu en bas à gauche -->
-            <div class="h-[500px] rounded-3xl bg-gray-200 relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center transition-opacity duration-500 ease-in-out "
+            <div class="h-[470px] rounded-3xl bg-gray-200 relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center transition-opacity duration-500 ease-in-out"
                 id="image-container">
-                <!-- Vous pouvez ajouter un effet de flou ou d'autres éléments ici si nécessaire -->
+                
             </div>
 
             <!-- Espace pour le texte à droite -->
-            <div class="flex flex-col justify-center ">
+            <div class="flex flex-col justify-center">
                 <h2 class="text-3xl font-bold mt-4" id="typed-title"></h2>
                 <div class="mt-6">
                     <p class="text-gray-600 font-semibold" id="typed-paragraph"></p>
@@ -27,14 +27,34 @@ import { onMounted } from 'vue';
 
 let stepsDisplayed = false; // Ajout d'une variable pour suivre l'affichage des étapes
 
-const titleText = "Modern Minimalist";
-const paragraphText = "Aesthetic furniture where every piece tells a story of style.";
+const titleText = "Étapes Clés pour Réaliser Votre Projet"; // Titre adapté
+const paragraphText = "Suivez ces étapes essentielles pour garantir le succès de votre projet, de la consultation initiale à la remise finale."; // Paragraphe adapté
 const steps = [
-    { icon: '🔍', text: 'Consultation initiale', detail: 'Nous discutons de vos besoins et de vos attentes.', description: 'Cliquez pour plus de détails.' },
-    { icon: '🗺️', text: 'Planification du projet', detail: 'Élaboration d’un plan détaillé pour le projet.', description: 'Cliquez pour plus de détails.' },
-    { icon: '🔨', text: 'Exécution des travaux', detail: 'Mise en œuvre des travaux selon le plan.', description: 'Cliquez pour plus de détails.' },
-    { icon: '🔍', text: 'Inspection finale', detail: 'Vérification de la qualité des travaux réalisés.', description: 'Cliquez pour plus de détails.' },
-    { icon: '📦', text: 'Remise du projet', detail: 'Remise des clés et présentation du projet final.', description: 'Cliquez pour plus de détails.' }
+    { 
+        icon: '🔍', 
+        text: 'Consultation initiale', 
+        detail: 'Cette étape consiste à rencontrer le client pour discuter de ses besoins, de ses attentes et de la portée du projet. Cela permet de comprendre les objectifs et de poser les bases du projet.' 
+    },
+    { 
+        icon: '🗺️', 
+        text: 'Planification du projet', 
+        detail: 'Durant cette phase, un plan détaillé est élaboré, incluant le calendrier, le budget et les ressources nécessaires. Cela permet de s’assurer que toutes les parties prenantes sont alignées sur les objectifs et les délais.' 
+    },
+    { 
+        icon: '🔨', 
+        text: 'Exécution des travaux', 
+        detail: 'C’est le moment où le travail réel commence. Les équipes mettent en œuvre le plan établi, en suivant les spécifications et en respectant les délais. La communication est essentielle pour s’assurer que tout se déroule comme prévu.' 
+    },
+    { 
+        icon: '🔍', 
+        text: 'Inspection finale', 
+        detail: 'Une fois les travaux terminés, une inspection est effectuée pour vérifier la qualité et s’assurer que tout est conforme aux attentes du client. Cela inclut des vérifications de sécurité et de fonctionnalité.' 
+    },
+    { 
+        icon: '📦', 
+        text: 'Remise du projet', 
+        detail: 'Cette étape finale consiste à remettre le projet au client. Cela inclut une présentation des résultats, la remise des documents nécessaires et la réponse à toutes les questions du client.' 
+    }
 ];
 
 onMounted(() => {
@@ -88,7 +108,7 @@ function displaySteps(steps, stepsContainer) {
             stepCard.className = "p-4 border rounded-lg shadow-lg mb-4 transform scale-75 opacity-0 transition-all duration-500 cursor-pointer";
 
             // Ajout de l'icône, du texte et de la description
-            stepCard.innerHTML = `${step.icon} <strong>${step.text}</strong> - <span class="text-gray-500">${step.description}</span>`;
+            stepCard.innerHTML = `${step.icon} <strong>${step.text}</strong>`;
 
             // Ajout d'un événement de clic
             stepCard.addEventListener('click', () => {
